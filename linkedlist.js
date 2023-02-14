@@ -150,3 +150,55 @@ module.exports = {
   getNodeValue,
 };
 
+
+//better for above 
+// const getNodeValue = (head, index) => {
+//   // todo
+//   if (head === null) return null;
+
+//   let curr = head;
+//   let count = 0;
+
+//   while (curr !== null) {
+//     if (count === index) {
+//       return curr.val;
+//     }
+//     curr = curr.next;
+//     count++;
+//   }
+
+//   return null;
+// };
+
+// module.exports = {
+//   getNodeValue,
+// };
+
+
+// class Node {
+//   constructor(val) {
+//     this.val = val;
+//     this.next = null;
+//   }
+// }
+
+const reverseList = (head) => {
+  // todo
+  if (head === null) return 0;
+  
+  let curr = head;
+  let prev = null;
+  
+  while (curr !== null) {
+    let temp = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = temp;
+  }
+  
+  return prev;
+};
+
+module.exports = {
+  reverseList,
+};
